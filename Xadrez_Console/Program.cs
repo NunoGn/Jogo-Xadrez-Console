@@ -10,7 +10,7 @@ namespace Xadrez_Console
         static void Main(string[] args)
         {
 
-            Tabuleiro tab = new Tabuleiro(8, 8);
+            Tabuleiro tab = new Tabuleiro(8, 8); //NUMERO DE POSICOES QUE O JOGO CONTEM
 
             tab.ColocarPeca(new Torre(tab,Cor.preto), new Posicao(0,0));
             tab.ColocarPeca(new Torre(tab, Cor.preto), new Posicao(1, 3));
@@ -18,7 +18,7 @@ namespace Xadrez_Console
 
 
 
-            Tela.ImprimirTabuleiro(tab);
+            Tela.ImprimirTabuleiro(tab);//IMPRIME TABULEIRO NA CONSOLE
 
             Console.ReadKey();
         }
