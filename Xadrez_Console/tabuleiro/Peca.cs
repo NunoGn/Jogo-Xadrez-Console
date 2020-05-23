@@ -6,10 +6,10 @@ namespace tabuleiro
     {
         #region ATRIBUTOS
 
-        public Posicao posicao { get; set; }
-        public int qteMovimentos { get; protected set; }
-        public Cor  cor { get; protected set; }
-        public Tabuleiro tab { get; protected set; }
+        public Posicao Posicao { get; set; }
+        public int QteMovimentos { get; protected set; }
+        public Cor  Cor { get; protected set; }
+        public Tabuleiro Tab { get; protected set; }
 
         #endregion
 
@@ -17,10 +17,10 @@ namespace tabuleiro
 
         public Peca(Tabuleiro tab, Cor cor)
         {
-            this.posicao = null;
-            this.qteMovimentos = 0;
-            this.cor = cor;
-            this.tab = tab;
+            Posicao = null;
+            QteMovimentos = 0;
+            Cor = cor;
+            Tab = tab;
         }
 
         #endregion

@@ -10,18 +10,18 @@ namespace Xadrez_Console
 
         public static void ImprimirTabuleiro(Tabuleiro tab)
         {
-            //METODO PARA IMPRIMIR TELA NA CONSOLE
+            //METODO PARA IMPRIMIR O TABULEIRO NA CONSOLE
             for (int i = 0; i < tab.Linhas; i++)
             {
                 for (int j = 0; j < tab.Colunas; j++)
                 {
-                    if (tab.peca(i, j) == null)
+                    if (tab.Peca(i, j) == null)
                     {
                         Console.Write("- ");
                     }
                     else
                     {
-                        Console.Write(tab.peca(i, j) + " ");
+                        Console.Write(tab.Peca(i, j) + " ");
                     }
 
                 }
