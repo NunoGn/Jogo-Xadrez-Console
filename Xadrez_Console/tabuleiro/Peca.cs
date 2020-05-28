@@ -2,7 +2,7 @@
 
 namespace tabuleiro
 {
-    class Peca
+    abstract class Peca
     {
         #region ATRIBUTOS
 
@@ -28,5 +28,10 @@ namespace tabuleiro
         {
             QteMovimentos++;
         }
+
+        public abstract bool[,] MovimentosPossiveis();
+        
+
+        
     }
 }
