@@ -1,6 +1,7 @@
 ﻿using System;
 using tabuleiro;
 using tabuleiro.Enum;
+using xadrez;
 
 namespace Xadrez_Console
 {
@@ -35,8 +36,16 @@ namespace Xadrez_Console
             Console.WriteLine("  A B C D E F G H"); //VAI IMPRIMIR NA TELA AS CASAS DO TABULEIRO(CARACTERES/HORIZONTAL)
         }
 
+        public static PosicaoXadrez LerPosicaoXadrez()
+        {
+            string s = Console.ReadLine();
+            char coluna = s[0];
+            int linha = int.Parse(s[1] + "");
+            return new PosicaoXadrez(coluna, linha);
+        }
 
-        public static void ImprimirPeca(Peca peca)
+        public static void ImprimirPeca(Peca peca) /*ESTRUTURA DE DECISAO DAS CORES DAS PEÇAS(PEÇAS VERMELHAS REPRESENTAM AS PRETAS. 
+                                                        UMA VEZ QUE NÃO É POSSIVEL PRETAS)*/
         {
             if (peca.Cor == Cor.branco)
             {

@@ -24,5 +24,9 @@ namespace tabuleiro
         }
 
         #endregion
+        public void IncrementarQteMovimentos()
+        {
+            QteMovimentos++;
+        }
     }
 }
