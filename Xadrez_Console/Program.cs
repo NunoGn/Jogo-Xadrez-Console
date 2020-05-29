@@ -25,8 +25,14 @@ namespace Xadrez_Console
                 {
                     Console.Clear();
                     Tela.ImprimirTabuleiro(partida.Tab);
+                    Console.WriteLine();
                     Console.Write("Origem: "); //PEDE A PEÇA QUE QUER MOVIMENTAR
                     Posicao origem = Tela.LerPosicaoXadrez().ToPosicao();
+
+                    bool[,] posicoesPossiveis = partida.Tab.Peca(origem).MovimentosPossiveis();
+                    Console.Clear();
+                    Tela.ImprimirTabuleiro(partida.Tab,posicoesPossiveis);
+                    Console.WriteLine();
                     Console.Write("Destino: ");//ESCOLHE O DESTINO QUE QUER COLOCAR A PEÇA
                     Posicao destino = Tela.LerPosicaoXadrez().ToPosicao();
 

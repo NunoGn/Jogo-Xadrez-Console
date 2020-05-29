@@ -21,6 +21,7 @@ namespace tabuleiro
             QteMovimentos = 0;
             Cor = cor;
             Tab = tab;
+            QteMovimentos = 0;
         }
 
         #endregion

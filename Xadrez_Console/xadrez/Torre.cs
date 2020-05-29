@@ -15,6 +15,8 @@ namespace xadrez
         #endregion
 
 
+        #region METODOS
+
         private bool PodeMover(Posicao pos)
         {
             Peca p = Tab.Peca(pos);
@@ -81,15 +83,11 @@ namespace xadrez
                 pos.Coluna = pos.Coluna - 1;
             }
 
-
-
-
-
-
-
             return mat;
 
 
         }
+
+        #endregion
     }
 }
