@@ -4,9 +4,9 @@
     enum Cor
     {
         //COR DAS PEÇAS DO JOGO
-        branco,
-        preto,
-        vermelho,
-        verde
+        Branca,
+        Preta,
+        Vermelha,
+        Verde
     }
 }
