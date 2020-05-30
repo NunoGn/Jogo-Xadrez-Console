@@ -28,8 +28,7 @@ namespace Xadrez_Console
 
 
                         Console.Clear();
-                        Tela.ImprimirPartida(partida);
-                        
+                        Tela.ImprimirPartida(partida);                      
                         
 
                         Console.WriteLine();
