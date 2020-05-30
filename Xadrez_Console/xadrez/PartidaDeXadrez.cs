@@ -42,6 +42,26 @@ namespace xadrez
             {
                 capturadas.Add(pecaCapturada);
             }
+
+            //JOGADA ESPECIAL ROQUE PEQUENO
+            if (p is Rei && destino.Coluna==origem.Coluna + 2)
+            {
+                Posicao origemT = new Posicao(origem.Linha, origem.Coluna + 3);
+                Posicao destinoT = new Posicao(origem.Linha, origem.Coluna + 1);
+                Peca T = Tab.RetirarPeca(origemT);
+                T.IncrementarQteMovimentos();
+                Tab.ColocarPeca(T, destinoT);
+            }
+
+            //JOGADA ESPECIAL ROQUE GRANDE
+            if (p is Rei && destino.Coluna == origem.Coluna - 2)
+            {
+                Posicao origemT = new Posicao(origem.Linha, origem.Coluna - 4);
+                Posicao destinoT = new Posicao(origem.Linha, origem.Coluna - 1);
+                Peca T = Tab.RetirarPeca(origemT);
+                T.IncrementarQteMovimentos();
+                Tab.ColocarPeca(T, destinoT);
+            }
             return pecaCapturada;
         }
 
@@ -57,6 +77,25 @@ namespace xadrez
                 capturadas.Remove(pecaCapturada);
             }
             Tab.ColocarPeca(p, origem);
+
+            //JOGADA ESPECIAL ROQUE PEQUENO
+            if (p is Rei && destino.Coluna == origem.Coluna + 2)
+            {
+                Posicao origemT = new Posicao(origem.Linha, origem.Coluna + 3);
+                Posicao destinoT = new Posicao(origem.Linha, origem.Coluna + 1);
+                Peca T = Tab.RetirarPeca(origemT);
+                T.DecrementarQteMovimentos();
+                Tab.ColocarPeca(T, origemT);
+            }
+            //JOGADA ESPECIAL ROQUE GRANDE
+            if (p is Rei && destino.Coluna == origem.Coluna - 2)
+            {
+                Posicao origemT = new Posicao(origem.Linha, origem.Coluna - 4);
+                Posicao destinoT = new Posicao(origem.Linha, origem.Coluna - 1);
+                Peca T = Tab.RetirarPeca(destinoT);
+                T.IncrementarQteMovimentos();
+                Tab.ColocarPeca(T, origemT);
+            }
         }
 
         public void RealizaJogada(Posicao origem, Posicao destino)
