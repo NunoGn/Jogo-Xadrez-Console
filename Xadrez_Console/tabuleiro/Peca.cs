@@ -29,6 +29,10 @@ namespace tabuleiro
         {
             QteMovimentos++;
         }
+        public void DecrementarQteMovimentos()
+        {
+            QteMovimentos--;
+        }
 
         public bool ExistemMovimentosPossiveis() //VAI VERIFICAR SE EXISTEM MOVIMENTOS POSSIVEIS PARA A PECA QUE O UTILIZADOR ESCOLHEU PARA JOGAR
         {
