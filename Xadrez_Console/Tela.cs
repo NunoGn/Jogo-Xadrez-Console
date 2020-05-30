@@ -2,13 +2,51 @@
 using tabuleiro;
 using tabuleiro.Enum;
 using xadrez;
+using System.Collections.Generic;
 
 namespace Xadrez_Console
 {
     class Tela
     {
 
+
         #region METODOS
+
+        public static void ImprimirPartida(PartidaDeXadrez partida)
+        {
+            ImprimirTabuleiro(partida.Tab);
+            Console.WriteLine();
+            ImprimirPecasCapturadas(partida);
+            Console.WriteLine();
+            Console.WriteLine("Turno: " + partida.Turno);
+            Console.WriteLine("Aguarda Jogada: " + partida.JogadorAtual);
+        }
+
+        public static void ImprimirPecasCapturadas(PartidaDeXadrez partida)
+        {
+            Console.WriteLine("Peças capturadas: ");
+            Console.Write("\tBrancas ");
+            ImprimirConjunto(partida.PecasCapturadas(Cor.Branca));
+            Console.WriteLine();
+            Console.Write("\tVermelhas ");
+            ConsoleColor aux = Console.ForegroundColor;
+            Console.ForegroundColor = ConsoleColor.DarkRed;            
+            ImprimirConjunto(partida.PecasCapturadas(Cor.Vermelha));
+            Console.ForegroundColor = aux;
+            Console.WriteLine();
+        }
+
+        public static void ImprimirConjunto(HashSet<Peca> conjunto)
+        {
+            Console.Write("[");
+            foreach(Peca x in conjunto)
+            {
+                Console.Write(x+" ");
+            }
+            Console.Write("]");            
+        }
+
+
 
         public static void ImprimirTabuleiro(Tabuleiro tab)
         {
